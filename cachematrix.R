@@ -44,3 +44,15 @@ cacheSolve <- function(x, ...) {
     x$setinv(x_inv)
     return(x_inv)
 }
+
+## Testing above code
+B <- matrix(c(1,3,5,7,1,3,5,7,1),3,3)
+B1 <- makeCacheMatrix(B)
+cacheSolve(B1)
+## Second time call to cacheSolve() prints the message and retrieves inverse from cache
+cacheSolve(B1)
+getting cached inverse matrix...
+            [,1]        [,2]        [,3]
+[1,] -0.08928571  0.03571429  0.19642857
+[2,]  0.14285714 -0.10714286  0.03571429
+[3,]  0.01785714  0.14285714 -0.08928571
